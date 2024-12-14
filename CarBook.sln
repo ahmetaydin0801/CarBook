@@ -1,8 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{1535B595-DE1E-4AAF-BBDB-C70D75004D60}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8346BD1A-83D2-4F3A-B077-719B188306E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Domain", "CarBook.Domain\CarBook.Domain.csproj", "{DFB8498A-C889-4C40-A23E-4830A56F47B0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{D385779D-9592-453E-B83D-F68B37455DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Domain", "Core\CarBook.Domain\CarBook.Domain.csproj", "{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarBook.Persistance", "Infrastructure\CarBook.Persistance\CarBook.Persistance.csproj", "{AC29C151-3928-4A32-8DB5-BDD8DF20F794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,12 +14,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DFB8498A-C889-4C40-A23E-4830A56F47B0} = {1535B595-DE1E-4AAF-BBDB-C70D75004D60}
+		{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6} = {8346BD1A-83D2-4F3A-B077-719B188306E1}
+		{AC29C151-3928-4A32-8DB5-BDD8DF20F794} = {D385779D-9592-453E-B83D-F68B37455DB0}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DFB8498A-C889-4C40-A23E-4830A56F47B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFB8498A-C889-4C40-A23E-4830A56F47B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFB8498A-C889-4C40-A23E-4830A56F47B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFB8498A-C889-4C40-A23E-4830A56F47B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8238006E-0DD3-4FB3-B3BD-BCEC14243BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC29C151-3928-4A32-8DB5-BDD8DF20F794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC29C151-3928-4A32-8DB5-BDD8DF20F794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC29C151-3928-4A32-8DB5-BDD8DF20F794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC29C151-3928-4A32-8DB5-BDD8DF20F794}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

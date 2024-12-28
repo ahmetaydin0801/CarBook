@@ -33,7 +33,7 @@ public class CarsController : Controller
     }
 
     [HttpGet]
-    public async Task<ActionResult> CarList()
+    public async Task<IActionResult> CarList()
     {
         var values  = await _getCarQueryHandler.Handle();
         return Ok(values);
@@ -48,30 +48,30 @@ public class CarsController : Controller
     }
 
     [HttpPost]
-    public async Task<ActionResult> CreateCar(CreateCarCommand command)
+    public async Task<IActionResult> CreateCar(CreateCarCommand command)
     {
          await _createCarCommandHandler.Handle(command);
         return Ok("Successfully created Car section");
     }
 
     [HttpDelete]
-    public async Task<ActionResult> RemoveCar(int id)
+    public async Task<IActionResult> RemoveCar(int id)
     {
         await _removeCarCommandHandler.Handle(new RemoveCarCommand(id));
         return Ok("Successfully removed Car section");
     }
 
     [HttpPut]
-    public async Task<ActionResult> UpdateCar(UpdateCarCommand command)
+    public async Task<IActionResult> UpdateCar(UpdateCarCommand command)
     {
         await _updateCarCommandHandler.Handle(command);
         return Ok("Successfully updated Car section");
     }
 
     [HttpGet("GetCarWithBrand")]
-    public async Task<ActionResult> GetCarWithBrand()
+    public IActionResult GetCarWithBrand()
     {
-        var values = await _getCarWithBrandQueryHandler.Handle();
+        var values =  _getCarWithBrandQueryHandler.Handle();
         return Ok(values);
     }
 }

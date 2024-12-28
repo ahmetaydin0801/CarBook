@@ -3,8 +3,10 @@ using CarBook.Application.Features.CQRS.Handlers.BannerHandlers;
 using CarBook.Application.Features.CQRS.Handlers.BrandHandlers;
 using CarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using CarBook.Application.Interfaces;
+using CarBook.Application.Interfaces.CarInterfaces;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
+using CarBook.Persistence.Repositories.CarRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +14,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CarBookContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<CarBookContext>();
+
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
 
 builder.Services.AddScoped<GetAboutQueryHandler>();
 builder.Services.AddScoped<GetAboutByIdQueryHandler>();

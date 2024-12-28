@@ -5,9 +5,12 @@ namespace CarBook.Persistence.Context;
 
 public class CarBookContext : DbContext
 {
+    public CarBookContext(DbContextOptions<CarBookContext> options) : base(options)
+    {
+        
+    }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost;Database=CarBookDatabase;TrustServerCertificate=True;Trusted_Connection=False;User Id=sa;Password=SQLConnect1!");
     }
     public DbSet<About> Abouts { get; set; }
     public DbSet<Banner> Banners { get; set; }

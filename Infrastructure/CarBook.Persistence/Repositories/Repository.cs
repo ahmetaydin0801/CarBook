@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CarBook.Persistence.Repositories;
 
-public class Repository<T>:IRepository<T> where T:class
+public class Repository<T>:IRepository<T> where T: class
 {
     private readonly CarBookContext _context;
     
@@ -29,6 +29,7 @@ public class Repository<T>:IRepository<T> where T:class
     {
         return await _context.Set<T>().FindAsync(id);
     }
+    
     
     public  async Task RemoveAsync(T entity)
     {

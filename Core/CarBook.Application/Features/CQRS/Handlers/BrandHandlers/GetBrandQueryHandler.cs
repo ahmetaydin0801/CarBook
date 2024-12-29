@@ -18,7 +18,6 @@ public class GetBrandQueryHandler
 
         var values = await _repository.GetAllAsync();
         
-        
         return values.Select(x =>
             new GetBrandQueryResult
             {

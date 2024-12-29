@@ -7,7 +7,7 @@ namespace CarBook.WebApi.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class BrandsController : Controller
+public class BrandsController : ControllerBase
 {
   private readonly CreateBrandCommandHandler _createBrandCommandHandler;
     private readonly GetBrandByIdQueryHandler _getBrandByIdQueryHandler;

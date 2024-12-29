@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CarBook.WebApi.Controllers;
 [Route("api/[controller]")]
 [ApiController]
-public class ContactsController : Controller
+public class ContactsController : ControllerBase
 {
       private readonly CreateContactCommandHandler _createContactCommandHandler;
     private readonly GetContactByIdQueryHandler _getContactByIdQueryHandler;

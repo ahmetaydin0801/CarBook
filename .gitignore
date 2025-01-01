@@ -1,3 +1,10 @@
+# Ignore all appsettings files by default
+appsettings*.json
+
+# Include the main appsettings.json explicitly
+!appsettings.json
+
+# Ignore other generated or build directories
 bin/
 obj/
 /packages/

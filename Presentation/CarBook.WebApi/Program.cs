@@ -16,7 +16,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<CarBookContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-builder.Services.AddScoped<CarBookContext>();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
@@ -66,14 +65,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
-app.UseHttpsRedirection();
-app.UseAuthorization();
+
+
 app.MapControllers();
 
 

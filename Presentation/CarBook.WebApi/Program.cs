@@ -63,6 +63,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.WebHost.UseUrls(Environment.GetEnvironmentVariable("ASPNETCORE_URLS") ?? "http://localhost:5000");
+
 var app = builder.Build();
 
 
@@ -72,6 +74,9 @@ var app = builder.Build();
 
 
 app.MapControllers();
+
+app.UseHttpsRedirection();
+app.UseAuthorization();
 
 
 

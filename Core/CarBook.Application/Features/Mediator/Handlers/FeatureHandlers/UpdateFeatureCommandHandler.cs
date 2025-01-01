@@ -17,7 +17,6 @@ public class UpdateFeatureCommandHandler:IRequestHandler<UpdateFeatureCommand>
     public async Task Handle(UpdateFeatureCommand request, CancellationToken cancellationToken)
     {
         var values = await _repository.GetByIdAsync(request.FeatureId);
-        values.FeatureId = request.FeatureId;
         values.Name = request.Name;
         await _repository.UpdateAsync(values);
     }

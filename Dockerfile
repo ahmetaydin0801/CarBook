@@ -19,8 +19,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app .
 
-# Expose the port
-EXPOSE 5000
+# Expose the correct port for Azure
+EXPOSE 8080
+
+# Set the application to listen on port 8080
+ENV ASPNETCORE_URLS=http://0.0.0.0:8080
 
 # Start the application
 ENTRYPOINT ["dotnet", "CarBook.WebApi.dll"]

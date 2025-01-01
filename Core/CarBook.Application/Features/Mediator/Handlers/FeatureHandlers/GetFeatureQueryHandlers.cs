@@ -6,7 +6,7 @@ using MediatR;
 
 namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandlers;
 
-public class GetFeatureQueryHandlers:IRequestHandler<GetFeatureQuery,List<GetFeatureQueryResult>>
+public class GetFeatureQueryHandlers : IRequestHandler<GetFeatureQuery,List<GetFeatureQueryResult>>
 {
     private readonly IRepository<Feature> _repository;
 
